@@ -487,6 +487,3 @@ public static boolean isPalindrome(final String s) {
 * Implement both optimal and brute force to see performance difference.
 * Modify the problem to treat Unicode combining characters properly.
 
----
-
-If you'd like, I can now generate **LeetCode Notes** for the next problem!
