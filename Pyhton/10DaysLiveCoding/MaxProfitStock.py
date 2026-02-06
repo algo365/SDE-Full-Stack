@@ -13,8 +13,20 @@ def max_profit_one_transaction(prices: List[int]) -> int:
     - You must buy before you sell.
     - If no profit is possible, return 0.
     """
-    # TODO: Candidate implements
-    return -1  # Intentional wrong value so tests fail initially
+    min_price = prices[0]
+    max_profit = 0 
+    length = len(prices)
+    
+    for index in range(1, length):
+        if prices[index] < min_price:
+            min_price = prices[index]
+            continue
+
+        current_profit = prices[index] - min_price
+        if current_profit > max_profit:
+            max_profit = current_profit
+
+    return max_profit
 
 
 # =========================================================

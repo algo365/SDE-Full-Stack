@@ -19,9 +19,26 @@ def get_second_largest(arr: List[int]):
     Return the second largest DISTINCT number in the array.
     If it does not exist, return None.
     """
-    # TODO: Candidate implements logic
-    return None  # intentional stub
+    largest = arr[0] # 10
+    second_largest = largest
+    count = len(arr)
 
+    if count < 2:
+        return None
+    
+    for index in range(1, count):
+        if arr[index] > largest:
+            second_largest = largest
+            largest = arr[index]
+        elif arr[index] > second_largest:
+            second_largest = arr[index]
+        elif second_largest == largest and arr[index] < second_largest:
+            second_largest = arr[index]
+
+    if second_largest == largest:
+        return None
+
+    return second_largest
 
 # =========================================================
 # Tiny Test Harness
